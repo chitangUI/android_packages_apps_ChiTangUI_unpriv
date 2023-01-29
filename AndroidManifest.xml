@@ -11,7 +11,7 @@
 
     <application android:label="Chi_Tang UI UserAgent"
         android:icon="@mipmap/icon"
-        android:theme="@style/Theme.SubSettingsBase"
+        android:theme="@android:style/Theme.DeviceDefault.NoActionBar"
         android:hardwareAccelerated="true"
         android:supportsRtl="true">
 

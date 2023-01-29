@@ -1,7 +1,7 @@
 android_app {
     name: "ChiTangUI_unpriv",
 
-    defaults: [],
+    defaults: ["SettingsLibDefaults"],
 
     srcs: ["src/**/*.java"],
     resource_dirs: ["res"],
@@ -21,6 +21,5 @@ android_app {
     ],
 
     required: [
-        "privapp_whitelist_chitangui.chitangui"
     ],
 }

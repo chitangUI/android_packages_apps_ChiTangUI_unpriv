@@ -1,0 +1,26 @@
+android_app {
+    name: "ChiTangUI_unpriv",
+
+    defaults: [],
+
+    srcs: ["src/**/*.java"],
+    resource_dirs: ["res"],
+
+    manifest: "AndroidManifest.xml",
+
+    platform_apis: true,
+    certificate: "platform",
+    system_ext_specific: true,
+    privileged: true,
+
+    optimize: {
+        //proguard_flags_files: ["proguard.flags"],
+    },
+
+    static_libs: [
+    ],
+
+    required: [
+        "privapp_whitelist_chitangui.chitangui"
+    ],
+}

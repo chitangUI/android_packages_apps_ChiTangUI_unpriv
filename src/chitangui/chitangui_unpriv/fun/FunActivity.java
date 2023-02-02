@@ -22,16 +22,17 @@ public class FunActivity extends Activity {
 
         {
             WebView webView = new WebView(this);
-            webView.loadUrl("file:android_asset/fun.html");
             webView.setWebViewClient(new WebViewClient(){
                 @Override
                 public boolean shouldOverrideUrlLoading(WebView view, String url) {
                     view.loadUrl(url);
+                    setResult(1);
+                    finish();
                     return true;
                 }
             });
             webView.getSettings().setJavaScriptEnabled(true);
-            webView.addJavascriptInterface(new JavaScriptInterface(), "chitangui_fun");
+            webView.loadUrl("file:android_asset/fun.html");
 
             layout.addView(webView);
         }
@@ -40,20 +41,10 @@ public class FunActivity extends Activity {
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_BACK) {
-            finishActivity(2);
-            return true;
-        } else {
-            return super.onKeyDown(keyCode, event);
+            setResult(2);
+            finish();
         }
-    }
-
-    public class JavaScriptInterface {
-
-        @JavascriptInterface
-        public void poweroff() {
-            finishActivity(1);
-        }
-
+        return super.onKeyDown(keyCode, event);
     }
 
 }

@@ -66,7 +66,8 @@ c251 18 335 28 340 41 10 25 -36 174 -79 263 -34 67 -60 103 -128 171 -97 98
       let downTimes = 0;
       if (window.chitangui_fun == null) {
         // Stub
-        chitangui_fun = {
+        console.log("Init ChiTang UI Fun JS interface stub");
+        window.chitangui_fun = {
           poweroff: function () {},
         };
       }
@@ -78,9 +79,10 @@ c251 18 335 28 340 41 10 25 -36 174 -79 263 -34 67 -60 103 -128 171 -97 98
         if (Math.random() < 0.02) {
           span.innerText = "功德 - 114514";
           downTimes++;
+          console.log("The " + downTimes + "th time easter egg get triggered");
           if (downTimes > 3) {
-            alert("WTF R U doing? DDoS attack or boring? Take a rest! -- xtex");
-            chitangui_fun.poweroff();
+            console.log("Redirecting to trigger poweroff.");
+            location.href = "https://chitang.dev/";
           }
         }
         if (Math.random() < 0.5) {
